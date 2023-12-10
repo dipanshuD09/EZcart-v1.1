@@ -1,0 +1,11 @@
+{
+  "name": "ezcart",
+  "version": "1.0.0",
+  "description": "eCommerce APP using MERN Stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DDG",
+  "license": "MIT"
+}
