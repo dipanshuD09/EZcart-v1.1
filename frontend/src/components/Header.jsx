@@ -30,11 +30,11 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="success" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
-              <img src={logo} alt="EZcart" />
+              <img src={logo} alt="EZcart" className="mx-1" />
               EZcart
             </Navbar.Brand>
           </LinkContainer>
