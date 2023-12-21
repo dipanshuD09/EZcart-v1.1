@@ -46,7 +46,12 @@ const CartScreen = () => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item._id}`} style={{textDecoration: 'none'}}>{item.name}</Link>
+                    <Link
+                      to={`/product/${item._id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      {item.name}
+                    </Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>
@@ -87,14 +92,23 @@ const CartScreen = () => {
               {cartItems.reduce((a, i) => a + i.qty * i.price, 0).toFixed(2)}
             </ListGroup.Item>
             <ListGroup.Item>
-              <Button
-                type="button"
-                className="btn-block"
-                disabled={cartItems.length === 0}
-                onClick={checkoutHandler}
-              >
-                Proceed To Checkout
-              </Button>
+              <Row>
+                <Col>
+                  <Button
+                    type="button"
+                    className="btn-block"
+                    disabled={cartItems.length === 0}
+                    onClick={checkoutHandler}
+                  >
+                    Proceed To Checkout
+                  </Button>
+                </Col>
+                <Col>
+                  <Link className="btn btn-warning" to="/">
+                    Continue Shopping
+                  </Link>
+                </Col>
+              </Row>
             </ListGroup.Item>
           </ListGroup>
         </Card>
