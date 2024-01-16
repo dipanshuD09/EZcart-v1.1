@@ -18,12 +18,12 @@ const Homescreen = () => {
 
   //   fetchProducts();
   // }, []);
-  const { data: products, isLoadong, error } = useGetProductsQuery();
+  const { data: products, isLoading, error } = useGetProductsQuery();
   return (
     <>
       <h1>Latest Products</h1>
 
-      {isLoadong ? (
+      {isLoading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error?.data?.message || error.error}</Message>

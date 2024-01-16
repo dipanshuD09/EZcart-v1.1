@@ -11,14 +11,14 @@ import { toast } from 'react-toastify';
 
 const UserProfileScreen = () => {
 
+    const userInfo = useSelector((state) => state.auth);
     
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [name, setName] = useState(userInfo.name);
+    const [email, setEmail] = useState(userInfo.email);
+    const [password, setPassword] = useState(userInfo.password);
     const [confirmPassword, setConfirmPassword] = useState('');
     const dispatch = useDispatch();
     
-    const userInfo = useSelector((state) => state.auth);
     
     const [updateProfile, {isLoading: loadingUpdateProfile}] = useProfileMutation();
 
@@ -54,7 +54,7 @@ const UserProfileScreen = () => {
             <Form.Control 
                 type="name" 
                 placeholder="Enter Name" 
-                value={name} 
+                value={userInfo.name} 
                 onChange={(e) => setName(e.target.value)}>
             </Form.Control>
         </Form.Group>
